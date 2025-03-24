@@ -128,7 +128,7 @@ class _BarcodeDisplayWidgetState extends State<_BarcodeDisplayWidget> {
       alignment: Alignment.bottomCenter,
       child: Container(
         decoration: BoxDecoration(
-          color: Colors.tealAccent.withValues(alpha: 0.7),
+          color: Colors.tealAccent.withOpacity(0.7),
         ),
         child: Column(mainAxisSize: MainAxisSize.min, children: [
           Material(
@@ -160,8 +160,7 @@ class _BarcodeDisplayWidgetState extends State<_BarcodeDisplayWidget> {
                       padding: const EdgeInsets.only(top: 8),
                       controller: widget.scrollController,
                       itemCount: value.data!.length,
-                      separatorBuilder: (context, index) =>
-                          const SizedBox(height: 4),
+                      separatorBuilder: (context, index) => const SizedBox(height: 4),
                       itemBuilder: (context, index) => Text(value.data![index]),
                     ),
             ),

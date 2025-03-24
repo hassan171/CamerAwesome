@@ -17,8 +17,7 @@ class AwesomeCaptureButton extends StatefulWidget {
   _AwesomeCaptureButtonState createState() => _AwesomeCaptureButtonState();
 }
 
-class _AwesomeCaptureButtonState extends State<AwesomeCaptureButton>
-    with SingleTickerProviderStateMixin {
+class _AwesomeCaptureButtonState extends State<AwesomeCaptureButton> with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late double _scale;
   final Duration _duration = const Duration(milliseconds: 100);
@@ -65,8 +64,7 @@ class _AwesomeCaptureButtonState extends State<AwesomeCaptureButton>
               onPhotoMode: (_) => CameraButtonPainter(),
               onPreparingCamera: (_) => CameraButtonPainter(),
               onVideoMode: (_) => VideoButtonPainter(),
-              onVideoRecordingMode: (_) =>
-                  VideoButtonPainter(isRecording: true),
+              onVideoRecordingMode: (_) => VideoButtonPainter(isRecording: true),
             ),
           ),
         ),
@@ -110,7 +108,7 @@ class CameraButtonPainter extends CustomPainter {
       ..isAntiAlias = true;
     var radius = size.width / 2;
     var center = Offset(size.width / 2, size.height / 2);
-    bgPainter.color = Colors.white.withValues(alpha: .5);
+    bgPainter.color = Colors.white.withOpacity(.5);
     canvas.drawCircle(center, radius, bgPainter);
 
     bgPainter.color = Colors.white;
@@ -135,7 +133,7 @@ class VideoButtonPainter extends CustomPainter {
       ..isAntiAlias = true;
     var radius = size.width / 2;
     var center = Offset(size.width / 2, size.height / 2);
-    bgPainter.color = Colors.white.withValues(alpha: .5);
+    bgPainter.color = Colors.white.withOpacity(.5);
     canvas.drawCircle(center, radius, bgPainter);
 
     if (isRecording) {
